@@ -18,10 +18,8 @@ public class Game {
     //context is a reference to the activity
     private Context context;
     private int points = 0; //how many points do we have
-
     private boolean running = false;
     private int direction;
-
     //bitmap of the pacman
     private Bitmap pacBitmap;
     //bitmap of the coins
@@ -32,7 +30,6 @@ public class Game {
     private TextView pointsView;
     //textview reference to counter
     private TextView counterView;
-
     private int level = 0;
     private boolean gameWon = false;
     private int pacx, pacy;
@@ -79,6 +76,7 @@ public class Game {
         if(gameWon == false){
             level = 0;
         }
+
         // when a new game is started, all the coins will have the state of not collected
         // and will be redraw on the canvas
         for (GoldCoin coin: getCoins()){
@@ -96,7 +94,6 @@ public class Game {
     }
 
     public void pauseGame(){
-
         for (Enemy enemy: getEnemies()){
 
             // create an if statement to check if the enemies are not alive then the game can not
@@ -109,7 +106,6 @@ public class Game {
                 toast.show();
 
                 gameView.invalidate();
-
             }
             else {
                 setRunning(false);
@@ -135,7 +131,6 @@ public class Game {
                 toast.show();
 
                 gameView.invalidate();
-
             }
             else {
                 setRunning(true);
@@ -169,7 +164,6 @@ public class Game {
             coins.add(coin4);
             coins.add(coin5);
             coins.add(coin6);
-
         }
 
         // set the position of the enemy
@@ -184,7 +178,6 @@ public class Game {
     }
 
     // create the movement for the pacman
-
     public void movePacmanUp(int pixels)
     {
         //still within our boundaries?
@@ -278,8 +271,6 @@ public class Game {
         }
     }
 
-
-
     public void GameOver() {
 
             CharSequence text = "Game Over!";
@@ -293,7 +284,6 @@ public class Game {
             newGame();
     }
 
-    //TODO check if the pacman touches a gold coin
     //and if yes, then update the necessary data
     //for the gold coins and the points
     //so you need to go through the arraylist of goldcoins and
@@ -346,7 +336,6 @@ public class Game {
                 }
             }
         }
-
         checkAllCoinsCollected();
     }
 
@@ -375,6 +364,7 @@ public class Game {
     {
         return pacy;
     }
+
     public int getlevel()
     {
         return level;

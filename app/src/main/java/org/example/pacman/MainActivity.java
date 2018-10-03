@@ -21,12 +21,10 @@ import static android.R.attr.button;
 
 public class MainActivity extends Activity {
     GameView gameView;
-
     Game game;
     private Timer myTimer;
     private Timer enemyTimer;
     private Timer timeRemaining;
-
     int counter = 60;
     TextView counterView;
     TextView levelView;
@@ -37,7 +35,6 @@ public class MainActivity extends Activity {
         //saying we want the game to run in one mode only
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
-
         gameView =  findViewById(R.id.gameView);
         TextView textView = findViewById(R.id.points);
         game = new Game(this,textView);
@@ -49,8 +46,6 @@ public class MainActivity extends Activity {
         timeRemaining = new Timer();
         counterView = findViewById(R.id.counter);
         levelView = findViewById(R.id.levels);
-
-        // create timers for pacman and enemies movement
 
         //We will call the timer 7 times each second
         myTimer.schedule(new TimerTask() {
@@ -158,7 +153,6 @@ public class MainActivity extends Activity {
                 game.resumeGame();
             }
         });
-
     }
 
     private void TimerMethod()
@@ -214,9 +208,9 @@ public class MainActivity extends Activity {
 
     private Runnable Remaining_Timer_Tick = new Runnable() {
         public void run() {
+
             //This method runs in the same thread as the UI.
             // so we can draw
-
             if (game.isRunning() && game.getDirection() != 0)
             {
                 counter--;
@@ -253,27 +247,4 @@ public class MainActivity extends Activity {
             }
         }
     };
-
-    // NOT USING THE DOT MENU SI I COMMENTED IT OUT
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//        if (id == R.id.action_settings) {
-//            Toast.makeText(this,"settings clicked",Toast.LENGTH_LONG).show();
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
 }

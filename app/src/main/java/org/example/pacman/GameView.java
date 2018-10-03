@@ -20,7 +20,6 @@ public class GameView extends View {
 		this.game = game;
 	}
 
-
 	/* The next 3 constructors are needed for the Android view system,
 	when we have a custom view.
 	 */
@@ -65,8 +64,6 @@ public class GameView extends View {
 		for (Enemy enemy: game.getEnemies()){
 			canvas.drawBitmap(game.getEnemyBitmap(), enemy.getEnemyX(), enemy.getEnemyY(), paint);
 		}
-
 		super.onDraw(canvas);
 	}
-
 }

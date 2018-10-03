@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="org.example.pacman.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <!-- Notice how the custom view is referenced here with
+        a full package path-->
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/newGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="New Game" />
+
+            <Button
+                android:id="@+id/pauseGame"
+                android:layout_width="123dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Pause Game" />
+
+            <Button
+                android:id="@+id/resumeGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Resume Game" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/levels"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/levels"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/points"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/counter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/counter"
+            android:textSize="24sp" />
+
+        <org.example.pacman.GameView
+            android:id="@+id/gameView"
+            android:layout_width="wrap_content"
+            android:layout_height="326dp">
+
+        </org.example.pacman.GameView>
+
+        <LinearLayout
+            android:id="@+id/leftRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/moveLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/move_left" />
+
+
+            <Button
+                android:id="@+id/moveUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/move_up" />
+
+            <Button
+                android:id="@+id/moveDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/move_down" />
+
+
+            <Button
+                android:id="@+id/moveRight"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/move_right" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
